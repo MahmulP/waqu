@@ -71,6 +71,13 @@
       "when": 1766551071358,
       "tag": "0009_rapid_vanisher",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1766556417595,
+      "tag": "0010_material_sunset_bain",
+      "breakpoints": true
     }
   ]
 }

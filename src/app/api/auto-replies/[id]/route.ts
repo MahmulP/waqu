@@ -24,20 +24,21 @@ export async function PUT(
 
     const { db } = await getDbConnection();
     
+    // Update all fields - don't use conditional spreading
     await db
       .update(autoReplies)
       .set({
-        ...(name && { name }),
-        ...(matchType && { matchType }),
-        ...(trigger && { trigger }),
-        ...(reply !== undefined && { reply }),
-        ...(sessionId !== undefined && { sessionId }),
-        ...(caseSensitive !== undefined && { caseSensitive }),
-        ...(priority && { priority }),
-        ...(isActive !== undefined && { isActive }),
-        ...(useAi !== undefined && { useAi }),
-        ...(aiContext !== undefined && { aiContext }),
-        ...(allowedNumbers !== undefined && { allowedNumbers }),
+        name,
+        matchType,
+        trigger,
+        reply,
+        sessionId,
+        caseSensitive,
+        priority,
+        isActive,
+        useAi,
+        aiContext,
+        allowedNumbers,
       })
       .where(and(
         eq(autoReplies.id, id),
