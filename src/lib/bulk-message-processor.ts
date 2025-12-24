@@ -197,7 +197,7 @@ export class BulkMessageProcessor {
       }
 
       // Send via WhatsApp API
-      const response = await fetch('http://localhost:3000/api/messages', {
+      const response = await fetch('http://localhost:3030/api/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -5,6 +5,17 @@ import { Server as SocketIOServer } from 'socket.io';
 import { SessionManager } from './src/lib/session-manager';
 import { BulkMessageProcessor } from './src/lib/bulk-message-processor';
 import type { ServerToClientEvents, ClientToServerEvents } from './src/lib/types';
+import { resolve } from 'path';
+import { config } from 'dotenv';
+
+// Load environment variables from .env.local (absolute path)
+const envPath = resolve(process.cwd(), '.env.local');
+config({ path: envPath });
+
+console.log('Environment loaded:');
+console.log('PORT:', process.env.PORT);
+console.log('DB_NAME:', process.env.DB_NAME);
+console.log('DB_USER:', process.env.DB_USER);
 
 const dev = process.env.NODE_ENV !== 'production';
 const hostname = 'localhost';

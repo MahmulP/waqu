@@ -1,6 +1,12 @@
 import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
 import * as schema from './schema';
+import { resolve } from 'path';
+import { config } from 'dotenv';
+
+// Load environment variables from .env.local (absolute path)
+const envPath = resolve(process.cwd(), '.env.local');
+config({ path: envPath });
 
 let connection: mysql.Connection | null = null;
 let db: any = null;
