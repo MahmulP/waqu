@@ -1,0 +1,5 @@
+name,phone,email,group,notes
+John Doe,6281234567890,john@example.com,Customers,VIP Customer
+Jane Smith,6289876543210,jane@example.com,Customers,Regular Customer
+Bob Wilson,6287654321098,bob@example.com,Team,Developer
+Alice Brown,6281122334455,alice@example.com,Team,Designer

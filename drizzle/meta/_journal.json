@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1766536305690,
+      "tag": "0000_outstanding_black_bird",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1766537406543,
+      "tag": "0001_milky_quasar",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1766539730793,
+      "tag": "0002_careful_gambit",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1766539899978,
+      "tag": "0003_sloppy_namorita",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1766540585719,
+      "tag": "0004_dashing_katie_power",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1766544868866,
+      "tag": "0005_cold_colossus",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1766545309942,
+      "tag": "0006_acoustic_sleeper",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1766545432326,
+      "tag": "0007_soft_stingray",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1766550590384,
+      "tag": "0008_calm_machine_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1766551071358,
+      "tag": "0009_rapid_vanisher",
+      "breakpoints": true
+    }
+  ]
+}
