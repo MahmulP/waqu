@@ -50,6 +50,9 @@ export default function AutoRepliesPage() {
     const sessionId = localStorage.getItem('selectedSessionId');
     if (sessionId) {
       setSelectedSessionId(sessionId);
+    } else {
+      // No session selected, stop loading
+      setLoading(false);
     }
   }, []);
 

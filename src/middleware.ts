@@ -4,16 +4,20 @@ import type { NextRequest } from 'next/server';
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip middleware for API routes, static files, install and login pages
+  // Skip middleware for API routes, static files, install, login and register pages
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/install') ||
     pathname.startsWith('/login') ||
+    pathname.startsWith('/register') ||
     pathname.includes('.')
   ) {
     return NextResponse.next();
   }
+
+  // Check if install is disabled
+  const installDisabled = process.env.DISABLE_INSTALL === 'true';
 
   // Check if database is configured
   const dbConfigured = 
@@ -21,8 +25,14 @@ export async function middleware(request: NextRequest) {
     process.env.DB_USER &&
     process.env.DB_NAME;
 
-  if (!dbConfigured && pathname !== '/install') {
+  // Redirect to install page if database not configured and install not disabled
+  if (!dbConfigured && !installDisabled && pathname !== '/install') {
     return NextResponse.redirect(new URL('/install', request.url));
+  }
+
+  // If install is disabled and database not configured, redirect to login
+  if (!dbConfigured && installDisabled) {
+    return NextResponse.redirect(new URL('/login', request.url));
   }
 
   // Check authentication for dashboard routes

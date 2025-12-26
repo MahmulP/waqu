@@ -8,6 +8,14 @@ import * as bcrypt from 'bcryptjs';
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if install is disabled via environment variable
+    if (process.env.DISABLE_INSTALL === 'true') {
+      return NextResponse.json(
+        { success: false, error: 'Installation is disabled. Set DISABLE_INSTALL=false in .env.local to enable.' },
+        { status: 403 }
+      );
+    }
+
     const body = await request.json();
     const { dbHost, dbPort, dbUser, dbPassword, dbName, adminEmail, adminName, adminPassword } = body;
 
